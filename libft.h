@@ -6,7 +6,7 @@
 /*   By: jemoreir <jemoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 11:14:32 by jemoreir          #+#    #+#             */
-/*   Updated: 2025/10/09 19:49:29 by jemoreir         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:02:12 by jemoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,13 @@ char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
+int		ft_printf(const char *tipo, ...);
+int		ft_putchar(int c);
+int		ft_putstr(const char *str);
+int		ft_hexconv(unsigned long ptr, char a);
+int		ft_print_pointer(unsigned long ptr);
+int		ft_printnbr(int n);
+int		ft_print_u(unsigned int a);
+int		ft_print_hex(unsigned long n, char c);
 
 #endif
