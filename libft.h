@@ -6,12 +6,16 @@
 /*   By: jemoreir <jemoreir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 11:14:32 by jemoreir          #+#    #+#             */
-/*   Updated: 2025/10/16 17:02:12 by jemoreir         ###   ########.fr       */
+/*   Updated: 2025/10/16 18:18:40 by jemoreir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
 # include <stdio.h> // Utilizar o Printf
 # include <ctype.h> // Verificar ou manipular um caracter
@@ -74,5 +78,6 @@ int		ft_print_pointer(unsigned long ptr);
 int		ft_printnbr(int n);
 int		ft_print_u(unsigned int a);
 int		ft_print_hex(unsigned long n, char c);
+
 
 #endif
