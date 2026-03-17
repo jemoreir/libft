@@ -3,35 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jemoreir <jemoreir@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/15 20:37:45 by jemoreir          #+#    #+#              #
-#    Updated: 2025/10/16 18:19:00 by jemoreir         ###   ########.fr        #
+#    Updated: 2026/03/17 16:00:03 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
-
-SRC= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memset.c \
-	ft_strlen.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
-	ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
-	ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
-	ft_strjoin.c ft_strtrim.c ft_putchar_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_split.c ft_lstnew.c\
-	ft_lstadd_front.c ft_lstsize.c ft_hexconv.c ft_print_hex.c ft_print_pointer.c\
-	ft_print_u.c ft_printf.c ft_printnbr.c ft_putchar.c ft_putstr.c
-
+SRC_DIR = src
+SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJECTS = $(SRC:.c=.o)
 
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iinclude
 
 all: $(NAME)
 
 $(NAME) : $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	
-%.o: %.c libft.h
+%.o: %.c include/libft.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	@rm -f $(OBJECTS)
